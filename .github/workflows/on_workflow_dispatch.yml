@@ -1,0 +1,29 @@
+# This is a basic workflow that is manually triggered
+
+name: Workflow Dispatch
+
+
+on:
+  workflow_dispatch:
+ 
+    inputs:
+      name:
+        description: 'Person to greet'
+
+        default: 'Human'
+        required: true
+      Pronouns:
+        description: 'Pronouns (Sir,madam,...etc)'
+        required: true          
+
+jobs:
+
+  greet:
+
+    runs-on: ubuntu-latest
+
+    
+    steps:
+ 
+    - name: Send greeting
+      run: echo "Hello there ${{ github.event.inputs.name }},${{ github.event.inputs.Pronouns }}. Hope you're having a nice day"
