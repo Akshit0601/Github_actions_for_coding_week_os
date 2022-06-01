@@ -1,0 +1,29 @@
+
+
+name: for_push_and_pr
+
+
+on:
+
+  push:
+  
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+ 
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      
+      - name: Run a one-line script
+        run: echo Hello there,hope you're having a nice day!
+
